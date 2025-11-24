@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Transactions{% endblock %}
+{% block content %}
+<h3>Transaction History</h3>
+
+<div class="card p-3 mt-3">
+  {% if history %}
+  <table class="table">
+    <thead>
+      <tr><th>Date</th><th>Type</th><th>Amount</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      {% for t in history %}
+      <tr>
+        <td>{{ t.timestamp.strftime("%Y-%m-%d %H:%M") }}</td>
+        <td>{% if t.type=='credit' %}<span class="text-success">Credit</span>{% else %}<span class="text-danger">Debit</span>{% endif %}</td>
+        <td>R{{ "%.2f"|format(t.amount) }}</td>
+        <td>{{ t.description }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p class="small-muted">No transactions yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Withdraw{% endblock %}
+{% block content %}
+<h3>Withdraw</h3>
+
+<div class="card p-4">
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Amount (R)</label>
+      <input name="amount" step="0.01" class="form-control" type="number" required>
+    </div>
+    <p class="small-muted">A withdrawal request will be created for admin approval.</p>
+    <button class="btn btn-primary">Request Withdrawal</button>
+  </form>
+</div>
+{% endblock %}

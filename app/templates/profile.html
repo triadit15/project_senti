@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h3>Profile</h3>
+
+<div class="card p-4">
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input name="new_email" class="form-control" value="{{ current_user.email }}">
+    </div>
+
+    <hr>
+
+    <h5>Change password</h5>
+    <div class="mb-3">
+      <label class="form-label">Current password</label>
+      <input name="current_password" type="password" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">New password</label>
+      <input name="new_password" type="password" class="form-control">
+    </div>
+
+    <button class="btn btn-primary">Update</button>
+  </form>
+</div>
+{% endblock %}

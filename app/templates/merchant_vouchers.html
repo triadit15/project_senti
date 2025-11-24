@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Vouchers{% endblock %}
+{% block content %}
+<h3>Created Vouchers</h3>
+
+<div class="card p-3 mt-3">
+  <table class="table">
+    <thead><tr><th>Code</th><th>Amount</th><th>Redeemed</th><th>Owner</th><th>QR</th></tr></thead>
+    <tbody>
+      {% for v in vouchers %}
+      <tr>
+        <td class="fw-bold">{{ v.code }}</td>
+        <td>R{{ "%.2f"|format(v.amount) }}</td>
+        <td>{% if v.redeemed %}<span class="badge bg-success">Yes</span>{% else %}<span class="badge bg-warning text-dark">No</span>{% endif %}</td>
+        <td>{{ v.owner.email if v.owner else "-" }}</td>
+        <td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('main.voucher_qr', code=v.code) }}" target="_blank">QR</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

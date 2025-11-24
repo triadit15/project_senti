@@ -1,0 +1,84 @@
+/* style.css — Light Blue Fintech theme (#0d6efd) */
+
+:root{
+  --senti-blue: #0d6efd;
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --muted:#6b7280;
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #111827;
+  margin:0;
+}
+
+/* app layout */
+.app-layout{display:flex;min-height:100vh}
+.app-sidebar{
+  width:260px;
+  background:var(--card);
+  border-right:1px solid #eef2f7;
+  padding:22px 16px;
+  position:fixed;
+  top:56px;
+  left:0;
+  bottom:0;
+  overflow:auto;
+}
+.sidebar-inner{position:sticky; top:12px}
+.sidebar-logo{width:140px}
+.app-content{
+  margin-left:260px;
+  padding:28px;
+  flex:1;
+}
+
+/* top navbar tweaks */
+.brand-logo{height:36px;margin-right:10px}
+.brand-title{font-weight:600;color:var(--senti-blue)}
+
+/* nav links */
+.app-sidebar .nav-link{
+  color:#374151;
+  padding:10px 12px;
+  border-radius:10px;
+  margin-bottom:8px;
+  display:block;
+  font-weight:500;
+}
+.app-sidebar .nav-link.active,
+.app-sidebar .nav-link:hover{
+  background: rgba(13,110,253,0.08);
+  color:var(--senti-blue);
+}
+
+/* cards */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+}
+
+/* buttons */
+.btn-primary, .btn-senti{
+  background:var(--senti-blue);
+  border-color:var(--senti-blue);
+}
+.btn-outline-primary{
+  color:var(--senti-blue);
+  border-color:var(--senti-blue);
+}
+
+/* small utilities */
+.kv { font-size:13px;color:var(--muted)}
+.small-muted{color:var(--muted);font-size:14px}
+
+/* responsive */
+@media (max-width:991px){
+  .app-sidebar{display:none}
+  .app-content{margin-left:0;padding:16px}
+}

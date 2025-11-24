@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Create Voucher{% endblock %}
+{% block content %}
+<h3>Create Voucher</h3>
+
+<div class="card p-4">
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.amount.label(class="form-label") }}
+      {{ form.amount(class="form-control", placeholder="Amount in R") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.code.label(class="form-label") }}
+      {{ form.code(class="form-control", placeholder="Optional: custom code") }}
+      <div class="small-muted">Leave blank to auto-generate code.</div>
+    </div>
+
+    <button class="btn btn-primary">Create Voucher</button>
+  </form>
+</div>
+{% endblock %}

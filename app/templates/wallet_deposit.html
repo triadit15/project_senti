@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Deposit (Sim){% endblock %}
+{% block content %}
+<h3>Deposit (Simulation)</h3>
+
+<div class="card p-4">
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Amount (R)</label>
+      <input name="amount" step="0.01" class="form-control" type="number" required>
+    </div>
+    <button class="btn btn-primary">Deposit</button>
+  </form>
+</div>
+{% endblock %}

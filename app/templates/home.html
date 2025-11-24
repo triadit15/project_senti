@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Welcome — Project Senti{% endblock %}
+{% block content %}
+<div class="row align-items-center">
+  <div class="col-lg-6">
+    <div class="card p-5">
+      <h1 class="mb-3">Payments simplified for merchants & people</h1>
+      <p class="small-muted mb-4">Create vouchers, redeem instantly with QR codes and manage a secure wallet — built for fast demos and merchant pilots.</p>
+
+      <div class="d-flex gap-2">
+        <a href="{{ url_for('main.register') }}" class="btn btn-primary btn-lg">Get Started</a>
+        <a href="{{ url_for('main.login') }}" class="btn btn-outline-primary btn-lg">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card p-4 text-center">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" style="max-width:220px">
+      <h4 class="mt-3">Project Senti</h4>
+      <p class="small-muted">An investor-ready prototype for voucher-based wallets.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
